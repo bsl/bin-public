@@ -1,0 +1,2 @@
+#!/bin/dash
+exec dmenu_run -b -fn '-*-terminus-medium-*-*-*-16-*-*-*-*-*-*-*'

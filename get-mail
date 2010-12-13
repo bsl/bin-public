@@ -1,0 +1,8 @@
+#!/bin/bash
+
+while true
+do
+  timeout -k 10s -s 15 240s offlineimap
+  echo
+  sleep 600
+done

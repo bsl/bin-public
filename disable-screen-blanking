@@ -1,0 +1,2 @@
+#!/bin/dash
+exec xset s off -dpms

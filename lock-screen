@@ -1,0 +1,3 @@
+#!/bin/dash
+i3lock --nofork --color 000000 --dpms
+disable-screen-blanking

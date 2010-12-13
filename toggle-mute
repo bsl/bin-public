@@ -1,0 +1,2 @@
+#!/bin/dash
+[ -n "$1" ] && exec amixer -q set "$1" toggle

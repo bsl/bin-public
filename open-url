@@ -1,0 +1,2 @@
+#!/bin/dash
+[ $# -eq 1 ] && [ -n "$1" ] && exec firefox "$1"
