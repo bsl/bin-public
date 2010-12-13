@@ -2,8 +2,6 @@
 
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
-local browser = 'firefox'
-
 local engines = {
   l = { nb = '#404040', nf = '#ffffff', p = 'Arch',               url = 'http://www.archlinux.org/packages/?q='                                                },
   L = { nb = '#404040', nf = '#ffffff', p = 'Arch [AUR]',         url = 'http://aur.archlinux.org/packages.php?K='                                             },
