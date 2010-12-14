@@ -3,20 +3,20 @@
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
 local engines = {
-  l = { nb = '#404040', nf = '#ffffff', p = 'Arch',               url = 'http://www.archlinux.org/packages/?q='                                                },
-  L = { nb = '#404040', nf = '#ffffff', p = 'Arch [AUR]',         url = 'http://aur.archlinux.org/packages.php?K='                                             },
-  G = { nb = '#404040', nf = '#ffffff', p = 'github',             url = 'http://github.com/search?x=0&y=0&q='                                                  },
-  i = { nb = '#404040', nf = '#ffffff', p = 'Google Images',      url = 'http://images.google.com/images?q='                                                   },
-  a = { nb = '#404040', nf = '#ffffff', p = 'Amazon',             url = 'http://www.amazon.com/exec/obidos/external-search?index=all&keyword='                 },
-  c = { nb = '#404040', nf = '#ffffff', p = 'Google Code Search', url = 'http://www.google.com/codesearch?q='                                                  },
-  d = { nb = '#404040', nf = '#ffffff', p = 'dictionary',         url = 'http://dictionary.reference.com/browse/'                                              },
-  g = { nb = '#404040', nf = '#ffffff', p = 'Google',             url = 'https://encrypted.google.com/search?num=100&q='                                       },
-  h = { nb = '#404040', nf = '#ffffff', p = 'Hoogle',             url = 'http://www.haskell.org/hoogle/?q='                                                    },
-  H = { nb = '#404040', nf = '#ffffff', p = 'Hackage',            url = 'http://www.google.com/search?hl=en&as_sitesearch=hackage.haskell.org%2Fpackage&as_q=' },
-  m = { nb = '#404040', nf = '#ffffff', p = 'Google Maps',        url = 'http://maps.google.com/maps?q='                                                       },
-  t = { nb = '#404040', nf = '#ffffff', p = 'thesaurus',          url = 'http://thesaurus.reference.com/search?q='                                             },
-  w = { nb = '#404040', nf = '#ffffff', p = 'Wikipedia',          url = 'https://secure.wikimedia.org/wikipedia/en/wiki/Special:Search?go=Go&search='          },
-  y = { nb = '#404040', nf = '#ffffff', p = 'YouTube',            url = 'http://www.youtube.com/results?search_type=search_videos&search_query='               },
+  l = { nb = '#404040', nf = '#ffffff', p = 'Arch',               url = 'http://www.archlinux.org/packages/?q='                                                 },
+  L = { nb = '#404040', nf = '#ffffff', p = 'Arch [AUR]',         url = 'http://aur.archlinux.org/packages.php?K='                                              },
+  G = { nb = '#404040', nf = '#ffffff', p = 'github',             url = 'http://github.com/search?x=0&y=0&q='                                                   },
+  i = { nb = '#404040', nf = '#ffffff', p = 'Google Images',      url = 'http://images.google.com/images?q='                                                    },
+  a = { nb = '#404040', nf = '#ffffff', p = 'Amazon',             url = 'http://www.amazon.com/exec/obidos/external-search?index=all&keyword='                  },
+  c = { nb = '#404040', nf = '#ffffff', p = 'Google Code Search', url = 'http://www.google.com/codesearch?q='                                                   },
+  d = { nb = '#404040', nf = '#ffffff', p = 'dictionary',         url = 'http://dictionary.reference.com/browse/'                                               },
+  g = { nb = '#404040', nf = '#ffffff', p = 'Google',             url = 'https://encrypted.google.com/search?num=100&q='                                        },
+  h = { nb = '#404040', nf = '#ffffff', p = 'Hoogle',             url = 'http://www.haskell.org/hoogle/?q='                                                     },
+  H = { nb = '#404040', nf = '#ffffff', p = 'Hackage',            url = 'http://www.google.com/search?hl=en&as_sitesearch=hackage.haskell.org%2Fpackages&as_q=' },
+  m = { nb = '#404040', nf = '#ffffff', p = 'Google Maps',        url = 'http://maps.google.com/maps?q='                                                        },
+  t = { nb = '#404040', nf = '#ffffff', p = 'thesaurus',          url = 'http://thesaurus.reference.com/search?q='                                              },
+  w = { nb = '#404040', nf = '#ffffff', p = 'Wikipedia',          url = 'https://secure.wikimedia.org/wikipedia/en/wiki/Special:Search?go=Go&search='           },
+  y = { nb = '#404040', nf = '#ffffff', p = 'YouTube',            url = 'http://www.youtube.com/results?search_type=search_videos&search_query='                },
 }
 
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
