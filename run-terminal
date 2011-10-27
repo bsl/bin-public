@@ -1,2 +1,2 @@
 #!/bin/dash
-exec urxvtc -e tmux
+exec urxvtc -e tmux -u
