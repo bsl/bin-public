@@ -31,43 +31,55 @@ function urlencode(s)
 end
 
 function quote(s)
-  return '\'' .. s .. '\''
+  return '\''..s..'\''
 end
 
-function makecommand(e)
-  local c = 'echo -n | dmenu -b -fn ' .. quote('-*-terminus-medium-*-*-*-16-*-*-*-*-*-*-*')
+function make_dmenu_command(engine)
+  local command = 'echo -n | dmenu -b -fn '..quote('-*-terminus-medium-*-*-*-16-*-*-*-*-*-*-*')
 
   for i,v in ipairs({ 'p', 'nb', 'nf', 'sb', 'sf' }) do
-    if e[v] then
-      c = c .. ' -' .. v .. ' ' .. quote(e[v])
+    if engine[v] then
+      command = command..' -'..v..' '..quote(engine[v])
     end
   end
 
-  return c
+  return command
 end
 
-function getsearchterm(e)
-  local c = makecommand(e)
-  local h = io.popen(c, 'r')
-  local s = h:read()
-  return s
+function get_search_term(engine)
+  local command = make_dmenu_command(engine)
+  local h = io.popen(command, 'r')
+  local term = h:read()
+  return term
 end
 
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
-if #arg ~= 1 or arg[1]:len() ~= 1 then
+if #arg ~= 1 and #arg ~= 2 then
+  print "usage: <engine> [search-term]"
   os.exit(1)
 end
 
-local e = engines[arg[1]]
-if not e then
+if arg[1]:len() ~= 1 then
+  print "engine must be one character in length"
   os.exit(1)
 end
 
-local s = getsearchterm(e)
-if s and s:len() > 0 then
-  u = e.url .. urlencode(s)
+local engine = engines[arg[1]]
+if not engine then
+  print "invalid engine"
+  os.exit(1)
+end
+
+if #arg == 2 then
+  term = arg[2]
+else
+  term = get_search_term(engine)
+end
+
+if term and term:len() > 0 then
+  u = engine.url..urlencode(term)
   if u then
-    os.execute('open-url ' .. quote(u))
+    os.execute('open-url '..quote(u))
   end
 end
