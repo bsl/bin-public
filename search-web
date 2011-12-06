@@ -10,6 +10,7 @@ local engines = {
   a = { nb = '#404040', nf = '#ffffff', p = 'Amazon',             url = 'http://www.amazon.com/exec/obidos/external-search?index=all&keyword='                  },
   c = { nb = '#404040', nf = '#ffffff', p = 'Google Code Search', url = 'http://www.google.com/codesearch?q='                                                   },
   d = { nb = '#404040', nf = '#ffffff', p = 'dictionary',         url = 'http://dictionary.reference.com/browse/'                                               },
+  D = { nb = '#404040', nf = '#ffffff', p = 'duckduckgo',         url = 'https://duckduckgo.com?kp=-1&kl=wt-wt&kh=1&q='                                         },
   g = { nb = '#404040', nf = '#ffffff', p = 'Google',             url = 'https://encrypted.google.com/search?num=100&q='                                        },
   h = { nb = '#404040', nf = '#ffffff', p = 'Hoogle',             url = 'http://www.haskell.org/hoogle/?q='                                                     },
   H = { nb = '#404040', nf = '#ffffff', p = 'Hackage',            url = 'http://www.google.com/search?hl=en&as_sitesearch=hackage.haskell.org%2Fpackages&as_q=' },
