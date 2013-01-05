@@ -1,8 +1,48 @@
-#!/bin/bash
+#!/usr/bin/env ruby
 
-while true
-do
-  timeout -k 10s -s 15 240s offlineimap
-  echo
-  sleep 600
-done
+require "timeout"
+
+SLEEP_SEC_AFTER_FAILURE = 30
+SLEEP_SEC_AFTER_SUCCESS = 60 * 20
+
+def sleepx(n)
+  STDIN.flush
+  result = nil
+  begin
+    Timeout::timeout(n) { STDIN.readline }
+    result = true
+  rescue Timeout::Error
+    result = false
+  rescue EOFError
+  end
+  result
+end
+
+def say(s)
+  STDOUT.puts "[#{s}]"
+end
+
+def run(c)
+  system(c)
+  $? == 0
+end
+
+def quit
+  say "quitting"
+  exit
+end
+
+trap("INT") { quit }
+
+loop do
+  loop do
+    say "checking"
+    break if run "offlineimap"
+    say "failed, sleeping"
+    sleep SLEEP_SEC_AFTER_FAILURE
+  end
+
+  if sleepx(SLEEP_SEC_AFTER_SUCCESS).nil?
+    quit
+  end
+end
