@@ -1,0 +1,17 @@
+#! /bin/bash
+
+set -e
+
+if ! which jpegtran &> /dev/null
+then
+  echo "need jpegtran(1) from libjpeg-turbo"
+  exit 1
+fi
+
+if [ $# -ne 1 ] || ! [ -f $1 ]
+then
+  echo "usage: $(basename $0) <jpg>"
+  exit 1
+fi
+
+jpegtran -copy none -outfile $1 < $1
