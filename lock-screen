@@ -1,3 +1,2 @@
 #!/bin/dash
-i3lock --nofork --color 000040 --dpms
-disable-screen-blanking
+exec i3lock --nofork --no-unlock-indicator --color 000040
