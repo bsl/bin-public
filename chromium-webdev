@@ -1,2 +1,0 @@
-#/bin/dash
-exec /usr/bin/chromium --incognito --allow-file-access-from-files
