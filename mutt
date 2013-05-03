@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Don't advertise local time zone.
+# Send dates with +0000 like
+#     Date: Wed, 1 May 2013 19:22:21 +0000
+# not Date: Wed, 1 May 2013 08:56:32 +0800
+TZ=UTC
+exec /usr/bin/mutt
