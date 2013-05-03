@@ -1,2 +1,2 @@
-#/bin/dash
-exec /usr/bin/chromium --incognito
+#/bin/sh
+exec /usr/bin/chromium --incognito $@
