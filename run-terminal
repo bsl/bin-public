@@ -1,2 +1,2 @@
-#!/bin/dash
-exec urxvtc -e tmux
+#!/bin/sh
+exec /usr/bin/termite -e tmux
