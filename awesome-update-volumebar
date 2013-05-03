@@ -1,0 +1,2 @@
+#!/bin/sh
+echo 'vicious.force({volumebar})' | awesome-client
