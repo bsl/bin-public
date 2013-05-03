@@ -2,8 +2,18 @@
 
 require "timeout"
 
+OFFLINEIMAP_MAX_SEC     = 60 * 5
 SLEEP_SEC_AFTER_FAILURE = 30
-SLEEP_SEC_AFTER_SUCCESS = 60 * 20
+SLEEP_SEC_AFTER_SUCCESS = 60 * 15
+
+OFFLINEIMAP_COMMAND = %W(
+  timeout
+  --kill-after 10s
+  --signal 15
+  --preserve-status
+  #{OFFLINEIMAP_MAX_SEC}
+  offlineimap
+).join(" ")
 
 def sleepx(n)
   STDIN.flush
@@ -37,7 +47,7 @@ trap("INT") { quit }
 loop do
   loop do
     say "checking"
-    break if run "offlineimap"
+    break if run OFFLINEIMAP_COMMAND
     say "failed, sleeping"
     sleep SLEEP_SEC_AFTER_FAILURE
   end
