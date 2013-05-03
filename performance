@@ -1,6 +1,0 @@
-#!/bin/sh
-
-for n in $(seq 0 3)
-do
-  cpufreq-set -c $n -g performance
-done
