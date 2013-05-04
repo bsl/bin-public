@@ -1,2 +1,29 @@
-#!/bin/dash
-[ $# -eq 1 ] && [ -n "$1" ] && exec firefox "$1"
+#!/usr/bin/env ruby
+
+require "uri"
+
+SCHEMES = %w(http https)
+BROWSER = "firefox"
+
+def is_valid_url?(s)
+  begin
+    u = URI.parse(s)
+    SCHEMES.include?(u.scheme)
+  rescue URI::InvalidURIError
+    false
+  end
+end
+
+# regarding safety of system(), see http://tinyurl.com/cegocju
+def open_url(url)
+  system *%W(#{BROWSER} #{url})
+end
+
+if $0 == __FILE__
+  if ARGV.length == 1
+    s = ARGV[0]
+    if is_valid_url?(s)
+      open_url(s)
+    end
+  end
+end
