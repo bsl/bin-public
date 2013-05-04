@@ -1,3 +1,4 @@
-#!/bin/bash
+#!/bin/sh
+
 amixer -q set Master toggle
 awesome-update-volumebar

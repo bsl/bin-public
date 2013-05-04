@@ -1,3 +1,4 @@
-#!/bin/bash
+#!/bin/sh
+
 amixer -q set Master 3dB-
 awesome-update-volumebar

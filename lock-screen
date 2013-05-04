@@ -1,2 +1,2 @@
-#!/bin/dash
+#!/bin/sh
 exec i3lock --nofork --no-unlock-indicator --color 000040
