@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+def get_selection
+  IO.popen("xsel").read
+end
+
+# regarding safety of system(), see http://tinyurl.com/cegocju
+def open_url(url)
+  system *%W(open-url #{url})
+end
+
+if $0 == __FILE__
+  s = get_selection.strip
+  if s =~ /^\S+$/
+    open_url(s)
+  end
+end
