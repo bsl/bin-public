@@ -10,8 +10,9 @@ local engines = {
   d = { nb = '#404040', nf = '#ffffff', p = 'dictionary',         url = 'http://dictionary.reference.com/browse/'                                               },
   g = { nb = '#404040', nf = '#ffffff', p = 'duckduckgo',         url = 'https://duckduckgo.com?kp=-1&kl=wt-wt&kh=1&q='                                         },
 --g = { nb = '#404040', nf = '#ffffff', p = 'Google',             url = 'https://encrypted.google.com/search?num=100&q='                                        },
-  h = { nb = '#404040', nf = '#ffffff', p = 'Hoogle',             url = 'http://www.haskell.org/hoogle/?q='                                                     },
-  H = { nb = '#404040', nf = '#ffffff', p = 'Hackage',            url = 'http://www.google.com/search?hl=en&as_sitesearch=hackage.haskell.org%2Fpackages&as_q=' },
+  -- h = { nb = '#404040', nf = '#ffffff', p = 'Hoogle',             url = 'http://www.haskell.org/hoogle/?q='                                                     },
+  h = { nb = '#404040', nf = '#ffffff', p = 'Hoogle',             url = 'http://www.fpcomplete.com/hoogle/?q='                                                     },
+  H = { nb = '#404040', nf = '#ffffff', p = 'Hackage',            url = 'http://hackage.haskell.org/package/' },
   t = { nb = '#404040', nf = '#ffffff', p = 'thesaurus',          url = 'http://thesaurus.reference.com/search?q='                                              },
   w = { nb = '#404040', nf = '#ffffff', p = 'Wikipedia',          url = 'https://secure.wikimedia.org/wikipedia/en/wiki/Special:Search?go=Go&search='           },
   y = { nb = '#404040', nf = '#ffffff', p = 'YouTube',            url = 'http://www.youtube.com/results?search_type=search_videos&search_query='                },
@@ -79,6 +80,7 @@ end
 if term and term:len() > 0 then
   u = engine.url..urlencode(term)
   if u then
+    -- print('open-url '..quote(u))
     os.execute('open-url '..quote(u))
   end
 end
